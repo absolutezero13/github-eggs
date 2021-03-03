@@ -1,0 +1,44 @@
+.header {
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  background-color: $blue;
+  padding-left: 2rem;
+  color: $white-text-color;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.24), 0 0 4px 0 rgba(0, 0, 0, 0.12);
+
+  & > * {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+  }
+
+  &__search {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &__input {
+      background-color: $dark-blue;
+      border-radius: 3px;
+      border: none;
+      color: $white-text-color;
+      outline: none;
+      font-size: inherit;
+      padding: 0.7rem;
+      padding-left: 5rem;
+    }
+    ::placeholder {
+      color: $white-text-color;
+    }
+    &__icon {
+      position: absolute;
+      left: 1.5rem;
+    }
+  }
+
+  &__bookmark-icon {
+    margin-right: 1rem;
+  }
+}
