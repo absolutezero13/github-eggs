@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../Icons/logo.svg";
 import searchSVG from "../Icons/search.svg";
 import bookmarkSVG from "../Icons/bookmark.svg";
 const Header: React.FC = () => {
+  const [repos, setRepos] = useState("");
+
+  const searchRepos = (input: string): any => {
+    fetch(`https://api.github.com/${input}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          setRepos(data);
+        }
+      });
+  };
+  console.log(repos);
+
   return (
     <div className="header">
       <div className="logo">
@@ -15,6 +28,7 @@ const Header: React.FC = () => {
           alt="search-icon"
         />
         <input
+          onChange={(e) => searchRepos(e.target.value)}
           type="search"
           className="header__search__input"
           placeholder="Search..."

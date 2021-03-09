@@ -5,10 +5,8 @@ import "./Sass/main.scss";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import SearchResults from "./Components/SearchResults";
 import UsersPage from "./Components/UsersPage";
+
 const App: React.FC = () => {
-  // fetch("https://api.github.com/repos/absolutezero13/meerkast")
-  //   .then((res) => res.json())
-  //   .then((data) => console.log(data));
   return (
     <BrowserRouter>
       <div className="App">
