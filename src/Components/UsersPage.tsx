@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { GithubContext } from "../Context/GithubContext";
-import isaSVG from "../Icons/star.svg";
 const UsersPage: React.FC = () => {
   const { users, userCount } = useContext(GithubContext);
   return (

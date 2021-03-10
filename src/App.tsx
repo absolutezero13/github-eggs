@@ -4,6 +4,7 @@ import Header from "./Components/Header";
 import "./Sass/main.scss";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import RepoDetails from "./Components/RepoDetails";
+import UsersPage from "./Components/UsersPage";
 
 const App: React.FC = () => {
   return (
@@ -11,8 +12,8 @@ const App: React.FC = () => {
       <div className="App">
         <Header />
         <Switch>
-          <Route path="/" component={BlankSearchPage} exact={true} />
-          <Route path="/repo-details" component={RepoDetails} exact={true} />
+          <Route path="/" component={BlankSearchPage} />
+          <Route path="/search-users" component={UsersPage} />
         </Switch>
       </div>
     </Router>

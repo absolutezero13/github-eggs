@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import repositoriesSVG from "../Icons/repositories.svg";
 import usersSVG from "../Icons/users.svg";
 import bookmarkblackSVG from "../Icons/bookmarkblack.svg";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { GithubContext } from "../Context/GithubContext";
 const SideBarSearchResults: React.FC = () => {
   const { repoCount, userCount } = useContext(GithubContext);
@@ -24,9 +24,9 @@ const SideBarSearchResults: React.FC = () => {
       </Link>
       <div className="side-bar-search-results__bookmarked ">
         <img src={bookmarkblackSVG} alt="bookmarked" />
-        <NavLink to="/repo-details">
+        <Link to="/repo-details">
           <p className="result-title">Bookmarked</p>
-        </NavLink>
+        </Link>
         <p className="quantity">15</p>
       </div>
     </div>
