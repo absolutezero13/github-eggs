@@ -3,9 +3,6 @@ import { GithubContext } from "../Context/GithubContext";
 import isaSVG from "../Icons/star.svg";
 const UsersPage: React.FC = () => {
   const { users, userCount } = useContext(GithubContext);
-
-  console.log(userCount);
-  console.log(users);
   return (
     <div className="main-search-results">
       <div className="main-search-results__repository-results">

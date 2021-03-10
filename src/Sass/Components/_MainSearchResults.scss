@@ -3,6 +3,8 @@
   color: $black-text-color;
   display: flex;
   flex: 1;
+  overflow: auto;
+  height: 90vh;
   &__repository-results {
     margin: 3rem 7rem;
     width: 100%;

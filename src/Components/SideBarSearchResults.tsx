@@ -8,7 +8,7 @@ const SideBarSearchResults: React.FC = () => {
   const { repoCount, userCount } = useContext(GithubContext);
   return (
     <div className="side-bar-search-results">
-      <Link to="/search-results">
+      <Link to="/">
         <div className="side-bar-search-results__repositories">
           <img src={repositoriesSVG} alt="repo" />
           <p className="result-title">Repositories</p>
