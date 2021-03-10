@@ -37,12 +37,3 @@ const UsersPage: React.FC = () => {
 };
 
 export default UsersPage;
-{
-  /* <div className="main-search-results__repository-results__result">
-<div className="main-search-results__repository-results__result__title">
-  <img src={isaSVG} alt="user" />
-  <h4>İsa Tanış</h4>
-</div>
-<p>Lead Developer @digieggs</p>
-</div> */
-}

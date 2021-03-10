@@ -18,7 +18,7 @@ const Header: React.FC = () => {
           alt="search-icon"
         />
         <input
-          //onChange={(e) => searchEverything(e.target.value)}
+          onChange={(e) => searchEverything(e.target.value)}
           type="search"
           className="header__search__input"
           placeholder="Search..."

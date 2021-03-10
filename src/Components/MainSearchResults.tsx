@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { GithubContext } from "../Context/GithubContext";
 import repositorySVG from "../Icons/repository.svg";
+import { Link } from "react-router-dom";
 const MainSearchResults: React.FC = () => {
   const { repos, repoCount } = useContext(GithubContext);
 
@@ -20,7 +21,10 @@ const MainSearchResults: React.FC = () => {
               >
                 <div className="main-search-results__repository-results__result__title">
                   <img src={repositorySVG} alt="repo" />
-                  <h4>{repo.name}</h4>
+                  <Link to="/repo-details">
+                    {" "}
+                    <h4>{repo.name}</h4>
+                  </Link>
                 </div>
                 <p>{repo.description}</p>
               </div>

@@ -5,8 +5,9 @@
   font-size: 1.6rem;
   color: $black-text-color;
   border-right: 1px solid $line-color;
-  width: 40rem;
+  min-width: 30rem;
   height: $body-height;
+  margin-left: 1rem;
 
   &__repositories:hover,
   &__users:hover,
