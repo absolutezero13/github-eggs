@@ -1,12 +1,12 @@
 import React, { createContext, useState } from "react";
 
 type contextType = {
-  repos: any;
-  users: any;
+  repos: Array<object>;
+  users: Array<object>;
   searchEverything: any;
   repoCount: number;
   userCount: number;
-  isSearched: any;
+  isSearched: boolean;
 };
 
 export const GithubContext = createContext<Partial<contextType>>({});

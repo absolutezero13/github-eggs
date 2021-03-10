@@ -15,7 +15,6 @@ const SearchResults: React.FC = () => {
         <Switch>
           <Route path="/" exact={true} component={MainSearchResults} />
           <Route path="/search-users" exact={true} component={UsersPage} />
-          <Route path="/repo-details" exact={true} component={RepoDetailMain} />
         </Switch>
       </div>
     </BrowserRouter>
