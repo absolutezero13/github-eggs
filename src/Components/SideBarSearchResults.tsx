@@ -24,7 +24,9 @@ const SideBarSearchResults: React.FC = () => {
       </Link>
       <div className="side-bar-search-results__bookmarked ">
         <img src={bookmarkblackSVG} alt="bookmarked" />
-        <p className="result-title">Bookmarked</p>
+        <Link to="/repo-details">
+          <p className="result-title">Bookmarked</p>
+        </Link>
         <p className="quantity">15</p>
       </div>
     </div>

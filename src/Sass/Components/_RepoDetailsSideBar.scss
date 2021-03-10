@@ -1,0 +1,59 @@
+.repo-details-side-bar {
+  font-size: 1.6rem;
+  color: $black-text-color;
+  border-right: 1px solid $line-color;
+  min-width: 40rem;
+  height: $body-height;
+  margin: 0rem 3rem;
+
+  &__description {
+    padding-top: 3rem;
+    line-height: 3rem;
+    padding-right: 2rem;
+
+    &__repo-link {
+      display: flex;
+    }
+  }
+
+  &__quantity {
+    font-weight: 700;
+
+    & > * {
+      display: flex;
+      margin: 3rem 0;
+      padding-bottom: 1rem;
+      align-items: center;
+      border-bottom: 1px solid $line-color;
+    }
+  }
+
+  &__button {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    border-radius: 5px;
+    outline: none;
+    color: $number-color;
+    border: 1px solid $number-color;
+    background-color: white;
+    cursor: pointer;
+
+    &:active {
+      transform: scale(0.99);
+    }
+    &:hover {
+      background-color: lighten($light-blue, 20%);
+    }
+  }
+}
+
+.count {
+  color: $number-color;
+  margin: 0 3rem 0 auto;
+}
+.text {
+  margin-left: 1rem;
+}
