@@ -1,20 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import logo from "../Icons/logo.svg";
 import searchSVG from "../Icons/search.svg";
 import bookmarkSVG from "../Icons/bookmark.svg";
+import { GithubContext } from "../Context/GithubContext";
 const Header: React.FC = () => {
-  const [repos, setRepos] = useState("");
-
-  const searchRepos = (input: string): any => {
-    fetch(`https://api.github.com/${input}`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data) {
-          setRepos(data);
-        }
-      });
-  };
-  console.log(repos);
+  const { searchEverything } = useContext(GithubContext);
 
   return (
     <div className="header">
@@ -28,7 +18,7 @@ const Header: React.FC = () => {
           alt="search-icon"
         />
         <input
-          onChange={(e) => searchRepos(e.target.value)}
+          //onChange={(e) => searchEverything(e.target.value)}
           type="search"
           className="header__search__input"
           placeholder="Search..."

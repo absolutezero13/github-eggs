@@ -13,7 +13,7 @@ const App: React.FC = () => {
         <Header />
         <Switch>
           <Route path="/" exact={true} component={BlankSearchPage} />
-          <SearchResults />
+          <Route path="/search" exact={false} component={SearchResults} />
         </Switch>
       </div>
     </BrowserRouter>

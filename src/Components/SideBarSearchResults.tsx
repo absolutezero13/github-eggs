@@ -1,23 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import repositoriesSVG from "../Icons/repositories.svg";
 import usersSVG from "../Icons/users.svg";
 import bookmarkblackSVG from "../Icons/bookmarkblack.svg";
 import { Link } from "react-router-dom";
+import { GithubContext } from "../Context/GithubContext";
 const SideBarSearchResults: React.FC = () => {
+  const { repoCount, userCount } = useContext(GithubContext);
   return (
     <div className="side-bar-search-results">
       <Link to="/search-results">
         <div className="side-bar-search-results__repositories">
           <img src={repositoriesSVG} alt="repo" />
           <p className="result-title">Repositories</p>
-          <p className="quantity">2654</p>
+          <p className="quantity">{repoCount ?? 0}</p>
         </div>
       </Link>
       <Link to="/search-users">
         <div className="side-bar-search-results__users">
           <img src={usersSVG} alt="users" />
           <p className="result-title">Users</p>
-          <p className="quantity">5</p>
+          <p className="quantity">{userCount ?? 0}</p>
         </div>
       </Link>
       <div className="side-bar-search-results__bookmarked ">
