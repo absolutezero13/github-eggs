@@ -4,7 +4,7 @@ import UserDetailMain from "./UserDetailMain";
 
 const UserDetails: React.FC = () => {
   return (
-    <div>
+    <div className="user-details">
       <SideBarUserDetails />
       <UserDetailMain />
     </div>

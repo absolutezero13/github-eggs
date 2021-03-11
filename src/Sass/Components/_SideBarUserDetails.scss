@@ -1,0 +1,15 @@
+.side-bar-user-details {
+  display: flex;
+  justify-content: center;
+  padding: 5rem 0;
+
+  &__user-information > img {
+    width: 20rem;
+    height: 20rem;
+  }
+  &__user-information {
+    &__desc {
+      margin-top: 3rem;
+    }
+  }
+}

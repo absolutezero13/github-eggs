@@ -1,0 +1,23 @@
+.user-detail-main {
+  display: flex;
+  margin: 12rem 2rem;
+  flex-direction: column;
+
+  &__title {
+    display: flex;
+    margin-bottom: 2rem;
+
+    &__number-box {
+      border: 2px solid $light-blue;
+      margin-left: 3rem;
+      width: 5rem;
+      font-size: 1.2rem;
+      color: $light-blue;
+      font-weight: 700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+    }
+  }
+}
