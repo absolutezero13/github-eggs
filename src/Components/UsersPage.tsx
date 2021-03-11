@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { GithubContext } from "../Context/GithubContext";
 const UsersPage: React.FC = () => {
   const { users, userCount } = useContext(GithubContext);
@@ -21,7 +22,9 @@ const UsersPage: React.FC = () => {
                     src={user.avatar_url}
                     alt="user"
                   />
-                  <h4>{user.login}</h4>
+                  <Link to="/user-details">
+                    <h4>{user.login}</h4>
+                  </Link>
                 </div>
                 <p>{user.type}</p>
               </div>
