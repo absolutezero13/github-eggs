@@ -1,16 +1,14 @@
 import React, { useContext } from "react";
 import { GithubContext } from "../Context/GithubContext";
 import searchPc from "../Icons/search-pc.svg";
-
 import SearchResults from "./SearchResults";
 
-
-const BlankSearchPage: React.FC = () => {
+const MainSearchPage: React.FC = () => {
   const { isSearched } = useContext(GithubContext);
   return (
     <div>
       {isSearched ? (
-        <SearchResults/>
+        <SearchResults />
       ) : (
         <div className="blank-search-page">
           <div className="blank-search-page__items">
@@ -23,4 +21,4 @@ const BlankSearchPage: React.FC = () => {
   );
 };
 
-export default BlankSearchPage;
+export default MainSearchPage;

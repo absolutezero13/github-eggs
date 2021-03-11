@@ -1,11 +1,12 @@
 import React from "react";
 import RepoDetailMain from "./RepoDetailMain";
-import RepoDetailsSideBar from "./RepoDetailsSideBar";
+import SideBarRepoDetails from "./SideBarRepoDetails";
 
-const RepoDetails = () => {
+const RepoDetails = (props: any) => {
+  console.log(props);
   return (
     <div className="repo-details">
-      <RepoDetailsSideBar />
+      <SideBarRepoDetails />
       <RepoDetailMain />
     </div>
   );

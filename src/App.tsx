@@ -1,22 +1,14 @@
 import React from "react";
-import BlankSearchPage from "./Components/BlankSearchPage";
+import MainSearchPage from "./Components/MainSearchPage";
 import Header from "./Components/Header";
 import "./Sass/main.scss";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import RepoDetails from "./Components/RepoDetails";
-import UsersPage from "./Components/UsersPage";
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <Switch>
-          <Route path="/" component={BlankSearchPage} />
-          <Route path="/search-users" component={UsersPage} />
-        </Switch>
-      </div>
-    </Router>
+    <div className="App">
+      <Header />
+      <MainSearchPage />
+    </div>
   );
 };
 

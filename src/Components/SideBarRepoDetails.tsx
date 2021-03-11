@@ -8,7 +8,7 @@ import forkSVG from "../Icons/fork.svg";
 import branchesSVG from "../Icons/branches.svg";
 import issuesSVG from "../Icons/issues.svg";
 import pullrequestsSVG from "../Icons/pullrequests.svg";
-const RepoDetailsSideBar: React.FC = () => {
+const SideBarRepoDetails: React.FC = () => {
   return (
     <div className="repo-details-side-bar">
       <div className="repo-details-side-bar__description">
@@ -54,4 +54,4 @@ const RepoDetailsSideBar: React.FC = () => {
   );
 };
 
-export default RepoDetailsSideBar;
+export default SideBarRepoDetails;
