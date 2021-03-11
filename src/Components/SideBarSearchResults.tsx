@@ -22,11 +22,13 @@ const SideBarSearchResults: React.FC = () => {
           <p className="quantity">{userCount ?? 0}</p>
         </div>
       </Link>
-      <div className="side-bar-search-results__bookmarked ">
-        <img src={bookmarkblackSVG} alt="bookmarked" />
-        <p className="result-title">Bookmarked</p>
-        <p className="quantity">15</p>
-      </div>
+      <Link to="/search-bookmarks">
+        <div className="side-bar-search-results__bookmarked ">
+          <img src={bookmarkblackSVG} alt="bookmarked" />
+          <p className="result-title">Bookmarked</p>
+          <p className="quantity">15</p>
+        </div>
+      </Link>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import BookmarkedRepos from "./BookmarkedRepos";
 import MainSearchResults from "./MainSearchResults";
 import RepoDetails from "./RepoDetails";
 import SideBarSearchResults from "./SideBarSearchResults";
@@ -14,6 +15,7 @@ const SearchResults: React.FC = () => {
         <Switch>
           <Route path="/user-details" component={UserDetails} />
           <Route path="/repo-details" component={RepoDetails} />
+          <Route path="/search-bookmarks" component={BookmarkedRepos} />
           <Route path="/search-users" component={UsersPage} />
           <Route path="/" component={MainSearchResults} />
         </Switch>
