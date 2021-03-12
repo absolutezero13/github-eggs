@@ -13,7 +13,7 @@ const SearchResults: React.FC = () => {
       <Router>
         <SideBarSearchResults />
         <Switch>
-          <Route path="/user-details" component={UserDetails} />
+          <Route path="/user-details/:id" component={UserDetails} />
           <Route path="/repo-details" component={RepoDetails} />
           <Route path="/search-bookmarks" component={BookmarkedRepos} />
           <Route path="/search-users" component={UsersPage} />

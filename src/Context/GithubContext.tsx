@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 
 type contextType = {
   repos: Array<object>;
-  users: Array<object>;
+  users: any;
   searchEverything: any;
   repoCount: number;
   userCount: number;

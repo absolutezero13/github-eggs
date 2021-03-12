@@ -2,11 +2,11 @@ import React from "react";
 import SideBarUserDetails from "./SideBarUserDetails";
 import UserDetailMain from "./UserDetailMain";
 
-const UserDetails: React.FC = () => {
+const UserDetails: React.FC = (props: any) => {
   return (
     <div className="user-details">
-      <SideBarUserDetails />
-      <UserDetailMain />
+      <SideBarUserDetails id={props.match.params.id} />
+      <UserDetailMain id={props.match.params.id} />
     </div>
   );
 };
