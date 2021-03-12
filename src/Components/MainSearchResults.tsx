@@ -4,13 +4,14 @@ import repositorySVG from "../Icons/repository.svg";
 import { Link } from "react-router-dom";
 const MainSearchResults: React.FC = () => {
   const { repos, repoCount } = useContext(GithubContext);
-  useEffect(() => {
-    // localStorage.setItem('repos')
-  }, [repos]);
-
-  useEffect(() => {
-    localStorage.getItem("repos");
-  }, []);
+  // useEffect(() => {
+  //   if (repos) {
+  //     JSON.parse(localStorage.getItem("repos")!);
+  //   }
+  // }, []);
+  // useEffect(() => {
+  //   localStorage.setItem("repos", JSON.stringify(repos));
+  // }, [repos]);
 
   return (
     <div className="main-search-results">

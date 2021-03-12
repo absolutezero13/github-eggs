@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
 type contextType = {
   repos: Array<object>;
@@ -17,6 +17,7 @@ const GithubProvider: React.FC = ({ children }: any) => {
   const [users, setUsers] = useState();
   const [userCount, setUserCount] = useState();
   const [isSearched, setSearchPageStatus] = useState(false);
+
   const searchEverything = (input: string) => {
     if (input.length > 2) {
       setSearchPageStatus(true);
@@ -33,7 +34,10 @@ const GithubProvider: React.FC = ({ children }: any) => {
           setUserCount(data.total_count);
           setUsers(data.items);
         });
+    } else {
+      setSearchPageStatus(false);
     }
+    localStorage.setItem("input", JSON.stringify(input));
   };
 
   return (
