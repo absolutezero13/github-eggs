@@ -1,9 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { GithubContext } from "../Context/GithubContext";
 import repositorySVG from "../Icons/repository.svg";
 import { Link } from "react-router-dom";
 const MainSearchResults: React.FC = () => {
   const { repos, repoCount } = useContext(GithubContext);
+  useEffect(() => {
+    // localStorage.setItem('repos')
+  }, [repos]);
+
+  useEffect(() => {
+    localStorage.getItem("repos");
+  }, []);
 
   return (
     <div className="main-search-results">

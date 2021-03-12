@@ -15,12 +15,16 @@ const SideBarUserDetails: React.FC<SideBarUserDetailProps> = ({ id }) => {
 
   return (
     <div className="side-bar-user-details">
-      <div className="side-bar-user-details__user-information">
-        <img src={avatar_url} alt="" />
-        <h3>{login} </h3>
-        <p>{html_url}</p>
-        <p className="side-bar-user-details__user-information__desc">{type}</p>
-      </div>
+      {userDetails && (
+        <div className="side-bar-user-details__user-information">
+          <img src={avatar_url} alt="" />
+          <h3>{login} </h3>
+          <p>{html_url}</p>
+          <p className="side-bar-user-details__user-information__desc">
+            {type}
+          </p>
+        </div>
+      )}
     </div>
   );
 };

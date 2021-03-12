@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { GithubContext } from "../Context/GithubContext";
 import svg from "../Icons/repository.svg";
 
 interface UserDetailMainProps {
@@ -6,19 +7,45 @@ interface UserDetailMainProps {
 }
 
 const UserDetailMain: React.FC<UserDetailMainProps> = ({ id }) => {
+  const { users } = useContext(GithubContext);
+  const user = users?.find((e: any) => {
+    return e.id == id;
+  });
+  const [userDetails] = useState(user);
+  const [userRepos, setUserRepos] = useState<Array<object>>();
+
+  useEffect(() => {
+    fetch(`https://api.github.com/users/${userDetails.login}/repos`)
+      .then((res) => res.json())
+      .then((repos) => setUserRepos(repos));
+  }, []);
+  console.log(userRepos);
+
   return (
     <div className="user-detail-main">
-      <div className="user-detail-main__title">
-        <h3>Repositories </h3>
-        <div className="user-detail-main__title__number-box">55</div>
-      </div>
-      <div className="user-detai-main__repos">
+      {userRepos ? (
         <div>
-          <img src={svg} alt="repo" />
-          <h4>repo/name {id}</h4>
+          <div className="user-detail-main__title">
+            <h3>Repositories </h3>
+            <div className="user-detail-main__title__number-box">
+              {userRepos.length}
+            </div>
+          </div>
+          {userRepos.map((repo: any) => {
+            return (
+              <div key={repo.id} className="user-detai-main__repos">
+                <div>
+                  <img src={svg} alt="repo" />
+                  <h4> {repo.name} </h4>
+                </div>
+                <p>{repo.description}</p>
+              </div>
+            );
+          })}
         </div>
-        <p>repo desc</p>
-      </div>
+      ) : (
+        <p>Loading..</p>
+      )}
     </div>
   );
 };
