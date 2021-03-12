@@ -4,14 +4,6 @@ import repositorySVG from "../Icons/repository.svg";
 import { Link } from "react-router-dom";
 const MainSearchResults: React.FC = () => {
   const { repos, repoCount } = useContext(GithubContext);
-  // useEffect(() => {
-  //   if (repos) {
-  //     JSON.parse(localStorage.getItem("repos")!);
-  //   }
-  // }, []);
-  // useEffect(() => {
-  //   localStorage.setItem("repos", JSON.stringify(repos));
-  // }, [repos]);
 
   return (
     <div className="main-search-results">
@@ -29,7 +21,7 @@ const MainSearchResults: React.FC = () => {
               >
                 <div className="main-search-results__repository-results__result__title">
                   <img src={repositorySVG} alt="repo" />
-                  <Link to="/repo-details">
+                  <Link to={`/repo-details/${repo.id}`}>
                     <h4>{repo.name}</h4>
                   </Link>
                 </div>

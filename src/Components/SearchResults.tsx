@@ -14,7 +14,7 @@ const SearchResults: React.FC = () => {
         <SideBarSearchResults />
         <Switch>
           <Route path="/user-details/:id" component={UserDetails} />
-          <Route path="/repo-details" component={RepoDetails} />
+          <Route path="/repo-details/:id" component={RepoDetails} />
           <Route path="/search-bookmarks" component={BookmarkedRepos} />
           <Route path="/search-users" component={UsersPage} />
           <Route exact={true} path="/" component={MainSearchResults} />

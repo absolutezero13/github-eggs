@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { GithubContext } from "../Context/GithubContext";
 
-const RepoDetailMain = () => {
+interface repoDetailMainProps {
+  id: number;
+}
+const RepoDetailMain: React.FC<repoDetailMainProps> = ({ id }) => {
+  const { repos } = useContext(GithubContext)!;
+  const [repo, setRepo] = useState<any>();
+
+  useEffect(() => {
+    const repo = repos?.find((e: any) => {
+      return e.id == id;
+    })!;
+
+    setRepo(repo);
+  }, []);
+
+  console.log(repo);
+
   return (
     <div className="repo-detail-main">
-      <p>
-        Lottie is a mobile library for Android and iOS that parses Adobe After
-        Effects animations exported as json with Bodymovin and renders them
-        natively on mobile! For the first time, designers can create and ship
-        beautiful animations without an engineer painstakingly recreating it by
-        hand. They say a picture is worth 1,000 words so here are 13,000:
-      </p>
+      {repo ? <p>{repo.description}</p> : <p>Loading</p>}
     </div>
   );
 };
