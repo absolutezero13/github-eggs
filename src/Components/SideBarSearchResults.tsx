@@ -6,14 +6,18 @@ import { Link } from "react-router-dom";
 import { GithubContext } from "../Context/GithubContext";
 const SideBarSearchResults: React.FC = () => {
   const { repoCount, userCount } = useContext(GithubContext);
-
+  const [repos, setRepos] = useState();
   const [bookmarkedRepoCount, setBookmarkedRepoCount] = useState<any>();
 
   useEffect(() => {
     const repos = JSON.parse(localStorage.getItem("bookmarkedRepos")!);
-    setBookmarkedRepoCount(repos.length);
-  }, []);
 
+    if (repos) {
+      setBookmarkedRepoCount(repos.length);
+      setRepos(repos);
+    }
+  }, []);
+  console.log(repos);
   console.log(bookmarkedRepoCount);
 
   return (
