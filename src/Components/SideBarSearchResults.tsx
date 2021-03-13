@@ -8,7 +8,6 @@ const SideBarSearchResults: React.FC = () => {
   const { repoCount, userCount, bookmarkedRepoCount } = useContext(
     GithubContext
   );
-
   return (
     <div className="side-bar-search-results">
       <Link to="/">

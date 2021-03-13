@@ -25,6 +25,9 @@ const GithubProvider: React.FC = ({ children }: any) => {
 
   useEffect(() => {
     setBookMarkedRepoCount(bookmarkedRepos.length);
+  }, []);
+  useEffect(() => {
+    setBookMarkedRepoCount(bookmarkedRepos.length);
   }, [bookmarkedRepos]);
 
   const searchEverything = (input: string) => {

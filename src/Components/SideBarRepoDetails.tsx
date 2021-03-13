@@ -21,6 +21,7 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
   const [branchCount, setBranchCount] = useState();
   const [pullRequestCount, setPullRequestCount] = useState();
   const [isBookmarked, setBookmarkedStatus] = useState<boolean>();
+  const { bookmarkedRepos, dispatch } = useContext(GithubContext);
 
   useEffect(() => {
     const repo = repos?.find((e: any) => {
@@ -49,15 +50,15 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
     }
   }, []);
 
-  const { bookmarkedRepos, dispatch } = useContext(GithubContext);
-
   const addBookmarkedRepo = () => {
     dispatch({
       type: "ADD_BOOKMARKED",
       repo,
     });
 
-    setBookmarkedStatus(true);
+    if (repo) {
+      repo.isBookmarked = true;
+    }
   };
 
   const deleteBookmarkedRepo = (id: number) => {
@@ -65,12 +66,16 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
       type: "DELETE_BOOKMARKED",
       id,
     });
-    setBookmarkedStatus(false);
+    if (repo) {
+      repo.isBookmarked = false;
+    }
   };
 
   useEffect(() => {
     localStorage.setItem("bookmarkedRepos", JSON.stringify(bookmarkedRepos));
   }, [bookmarkedRepos]);
+
+  console.log(bookmarkedRepos);
 
   return (
     <div className="repo-details-side-bar">
@@ -115,7 +120,7 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
       ) : (
         <p>Loading...</p>
       )}
-      {isBookmarked ? (
+      {repo && repo.isBookmarked ? (
         <button
           onClick={() => deleteBookmarkedRepo(repo.id)}
           className="repo-details-side-bar__button button-delete"

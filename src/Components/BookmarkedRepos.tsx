@@ -6,9 +6,7 @@ const BookmarkedRepos: React.FC = () => {
   const { bookmarkedRepoCount } = useContext(GithubContext);
   useEffect(() => {
     const repos = JSON.parse(localStorage.getItem("bookmarkedRepos")!);
-    if (repos) {
-      setRepos(repos);
-    }
+    setRepos(repos);
   }, []);
   console.log(bookmarkedRepoCount);
   return (
