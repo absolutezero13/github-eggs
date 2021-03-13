@@ -9,16 +9,14 @@ const SideBarSearchResults: React.FC = () => {
   const [repos, setRepos] = useState();
   const [bookmarkedRepoCount, setBookmarkedRepoCount] = useState<any>();
 
-  useEffect(() => {
-    const repos = JSON.parse(localStorage.getItem("bookmarkedRepos")!);
+  // useEffect(() => {
+  //   const repos = JSON.parse(localStorage.getItem("bookmarkedRepos")!);
 
-    if (repos) {
-      setBookmarkedRepoCount(repos.length);
-      setRepos(repos);
-    }
-  }, []);
-  console.log(repos);
-  console.log(bookmarkedRepoCount);
+  //   if (repos) {
+  //     setBookmarkedRepoCount(repos.length);
+  //     setRepos(repos);
+  //   }
+  // }, []);
 
   return (
     <div className="side-bar-search-results">
@@ -40,7 +38,7 @@ const SideBarSearchResults: React.FC = () => {
         <div className="side-bar-search-results__bookmarked ">
           <img src={bookmarkblackSVG} alt="bookmarked" />
           <p className="result-title">Bookmarked</p>
-          <p className="quantity"> {bookmarkedRepoCount} </p>
+          <p className="quantity"> {10} </p>
         </div>
       </Link>
     </div>

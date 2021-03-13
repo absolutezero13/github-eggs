@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import repositorySVG from "../Icons/repository.svg";
 const BookmarkedRepos: React.FC = () => {
   const [repos, setRepos] = useState<any>();
-
   useEffect(() => {
     const repos = JSON.parse(localStorage.getItem("bookmarkedRepos")!);
     if (repos) {
-      setRepos([repos]);
+      setRepos(repos);
     }
   }, []);
 

@@ -19,6 +19,7 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
   const [repo, setRepo] = useState<any>();
   const [branchCount, setBranchCount] = useState();
   const [pullRequestCount, setPullRequestCount] = useState();
+  const [isBookmarked, setBookmarkedStatus] = useState<boolean>();
 
   useEffect(() => {
     const repo = repos?.find((e: any) => {
@@ -47,17 +48,29 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
     }
   });
 
-  const [bookmarkedRepos, setBookmarkedRepos] = useState();
+  const { bookmarkedRepos, dispatch } = useContext(GithubContext);
 
-  const addBookmarkedRepo = (id: number) => {
-    localStorage.setItem("bookmarkedRepos", JSON.stringify(repo));
+  const addBookmarkedRepo = () => {
+    dispatch({
+      type: "ADD_BOOKMARKED",
+      repo,
+    });
+
+    setBookmarkedStatus(true);
   };
 
-  // useEffect(() => {
-  //   localStorage.setItem("posts", JSON.stringify(bookmarkedRepos));
-  // }, [bookmarkedRepos]);
+  const deleteBookmarkedRepo = (id: number) => {
+    dispatch({
+      type: "DELETE_BOOKMARKED",
+      id,
+    });
+    setBookmarkedStatus(false);
+  };
 
-  console.log(pullRequestCount);
+  useEffect(() => {
+    localStorage.setItem("bookmarkedRepos", JSON.stringify(bookmarkedRepos));
+  }, [bookmarkedRepos]);
+  console.log(repo ? repo.id : null);
   return (
     <div className="repo-details-side-bar">
       {repo ? (
@@ -71,28 +84,28 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
           </div>
           <div className="repo-details-side-bar__quantity">
             <div className="repo-details-side-bar__quantity__watch">
-              <img src={watchSVG} alt="svg" /> <p className="text">Watch</p>{" "}
+              <img src={watchSVG} alt="svg" /> <p className="text">Watch</p>
               <p className="count"> {repo.watchers_count} </p>
             </div>
             <div className="repo-details-side-bar__quantity__star">
-              <img src={starSVG} alt="svg" /> <p className="text">Star</p>{" "}
+              <img src={starSVG} alt="svg" /> <p className="text">Star</p>
               <p className="count"> {repo.stargazers_count} </p>
             </div>
             <div className="repo-details-side-bar__quantity__fork">
-              <img src={forkSVG} alt="svg" /> <p className="text">Fork</p>{" "}
+              <img src={forkSVG} alt="svg" /> <p className="text">Fork</p>
               <p className="count">{repo.forks_count}</p>
             </div>
             <div className="repo-details-side-bar__quantity__branches">
-              <img src={branchesSVG} alt="svg" />{" "}
-              <p className="text">Branches</p>{" "}
+              <img src={branchesSVG} alt="svg" />
+              <p className="text">Branches</p>
               <p className="count">{branchCount}</p>
             </div>
             <div className="repo-details-side-bar__quantity__issues">
-              <img src={issuesSVG} alt="svg" /> <p className="text">Issues</p>{" "}
+              <img src={issuesSVG} alt="svg" /> <p className="text">Issues</p>
               <p className="count">{repo.open_issues_count}</p>
             </div>
             <div className="repo-details-side-bar__quantity__pull-requests">
-              <img src={pullrequestsSVG} alt="svg" />{" "}
+              <img src={pullrequestsSVG} alt="svg" />
               <p className="text">Pull Requests</p>
               <p className="count">{pullRequestCount}</p>
             </div>
@@ -101,12 +114,21 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
       ) : (
         <p>Loading...</p>
       )}
-      <button
-        onClick={() => addBookmarkedRepo(repo.id)}
-        className="repo-details-side-bar__button"
-      >
-        <img src={bookmarkblueSVG} alt="" /> Add to Bookmarks
-      </button>
+      {isBookmarked ? (
+        <button
+          onClick={() => deleteBookmarkedRepo(repo.id)}
+          className="repo-details-side-bar__button"
+        >
+          <img src={bookmarkblueSVG} alt="" /> Delete From Bookmarks
+        </button>
+      ) : (
+        <button
+          onClick={addBookmarkedRepo}
+          className="repo-details-side-bar__button"
+        >
+          <img src={bookmarkblueSVG} alt="" /> Add to Bookmarks
+        </button>
+      )}
     </div>
   );
 };
