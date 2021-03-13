@@ -47,9 +47,15 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
     }
   });
 
+  const [bookmarkedRepos, setBookmarkedRepos] = useState();
+
   const addBookmarkedRepo = (id: number) => {
     localStorage.setItem("bookmarkedRepos", JSON.stringify(repo));
   };
+
+  // useEffect(() => {
+  //   localStorage.setItem("posts", JSON.stringify(bookmarkedRepos));
+  // }, [bookmarkedRepos]);
 
   console.log(pullRequestCount);
   return (

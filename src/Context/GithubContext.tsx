@@ -1,5 +1,5 @@
-import React, { createContext, useEffect, useState } from "react";
-
+import React, { createContext, useEffect, useState, useReducer } from "react";
+import { bookmarkedReposReducer } from "./Reducer";
 type contextType = {
   repos: Array<object>;
   users: any;
@@ -7,6 +7,8 @@ type contextType = {
   repoCount: number;
   userCount: number;
   isSearched: boolean;
+  bookmarkedRepos: any;
+  dispatch: any;
 };
 
 export const GithubContext = createContext<Partial<contextType>>({});
@@ -17,6 +19,7 @@ const GithubProvider: React.FC = ({ children }: any) => {
   const [users, setUsers] = useState();
   const [userCount, setUserCount] = useState();
   const [isSearched, setSearchPageStatus] = useState(false);
+  const [bookmarkedRepos, dispatch] = useReducer(bookmarkedReposReducer, []);
 
   const searchEverything = (input: string) => {
     if (input.length > 2) {
@@ -48,6 +51,8 @@ const GithubProvider: React.FC = ({ children }: any) => {
         repoCount,
         userCount,
         isSearched,
+        bookmarkedRepos,
+        dispatch,
       }}
     >
       {children}
