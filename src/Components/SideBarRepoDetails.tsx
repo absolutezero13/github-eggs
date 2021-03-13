@@ -38,7 +38,7 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
         .then((res) => res.json())
         .then((branches) => setBranchCount(branches.length));
     }
-  });
+  }, []);
   useEffect(() => {
     if (repo) {
       fetch(
@@ -47,7 +47,7 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
         .then((res) => res.json())
         .then((branches) => setPullRequestCount(branches.length));
     }
-  });
+  }, []);
 
   const { bookmarkedRepos, dispatch } = useContext(GithubContext);
 
@@ -71,7 +71,7 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
   useEffect(() => {
     localStorage.setItem("bookmarkedRepos", JSON.stringify(bookmarkedRepos));
   }, [bookmarkedRepos]);
-  console.log(repo ? repo.id : null);
+
   return (
     <div className="repo-details-side-bar">
       {repo ? (

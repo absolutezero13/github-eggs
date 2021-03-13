@@ -9,6 +9,7 @@ type contextType = {
   isSearched: boolean;
   bookmarkedRepos: any;
   dispatch: any;
+  bookmarkedRepoCount: number;
 };
 
 export const GithubContext = createContext<Partial<contextType>>({});
@@ -20,6 +21,11 @@ const GithubProvider: React.FC = ({ children }: any) => {
   const [userCount, setUserCount] = useState();
   const [isSearched, setSearchPageStatus] = useState(false);
   const [bookmarkedRepos, dispatch] = useReducer(bookmarkedReposReducer, []);
+  const [bookmarkedRepoCount, setBookMarkedRepoCount] = useState();
+
+  useEffect(() => {
+    setBookMarkedRepoCount(bookmarkedRepos.length);
+  }, [bookmarkedRepos]);
 
   const searchEverything = (input: string) => {
     if (input.length > 2) {
@@ -52,6 +58,7 @@ const GithubProvider: React.FC = ({ children }: any) => {
         userCount,
         isSearched,
         bookmarkedRepos,
+        bookmarkedRepoCount,
         dispatch,
       }}
     >
