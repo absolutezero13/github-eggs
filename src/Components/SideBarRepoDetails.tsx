@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import repositorySVG from "../Icons/repository.svg";
 import repolinkSVG from "../Icons/repolink.svg";
 import bookmarkblueSVG from "../Icons/bookmarkblue.svg";
+import bookmarkSVG from "../Icons/bookmark.svg";
 import watchSVG from "../Icons/watch.svg";
 import starSVG from "../Icons/star.svg";
 import forkSVG from "../Icons/fork.svg";
@@ -117,9 +118,9 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
       {isBookmarked ? (
         <button
           onClick={() => deleteBookmarkedRepo(repo.id)}
-          className="repo-details-side-bar__button"
+          className="repo-details-side-bar__button button-delete"
         >
-          <img src={bookmarkblueSVG} alt="" /> Delete From Bookmarks
+          <img src={bookmarkSVG} alt="" /> Delete From Bookmarks
         </button>
       ) : (
         <button

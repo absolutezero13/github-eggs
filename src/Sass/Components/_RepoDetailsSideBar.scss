@@ -58,3 +58,12 @@
 .text {
   margin-left: 1rem;
 }
+
+.button-delete {
+  background-color: $number-color;
+  color: white;
+
+  &:hover {
+    background-color: darken($light-blue, 20%);
+  }
+}
