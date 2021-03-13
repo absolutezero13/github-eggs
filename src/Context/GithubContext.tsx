@@ -24,8 +24,9 @@ const GithubProvider: React.FC = ({ children }: any) => {
   const [bookmarkedRepoCount, setBookMarkedRepoCount] = useState();
 
   useEffect(() => {
-    setBookMarkedRepoCount(bookmarkedRepos.length);
-  }, []);
+    localStorage.setItem("bookmarkedRepos", JSON.stringify(bookmarkedRepos));
+  }, [bookmarkedRepos]);
+
   useEffect(() => {
     setBookMarkedRepoCount(bookmarkedRepos.length);
   }, [bookmarkedRepos]);

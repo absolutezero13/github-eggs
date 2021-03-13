@@ -3,17 +3,16 @@ import { GithubContext } from "../Context/GithubContext";
 import repositorySVG from "../Icons/repository.svg";
 const BookmarkedRepos: React.FC = () => {
   const [repos, setRepos] = useState<any>();
-  const { bookmarkedRepoCount } = useContext(GithubContext);
   useEffect(() => {
     const repos = JSON.parse(localStorage.getItem("bookmarkedRepos")!);
     setRepos(repos);
   }, []);
-  console.log(bookmarkedRepoCount);
+
   return (
     <div className="main-search-results bookmarked-repos">
       <div className="main-search-results__repository-results">
         <div className="main-search-results__repository-results__title">
-          <h2> {bookmarkedRepoCount} Bookmarked Repository Results</h2>
+          <h2> {repos && repos.length} Bookmarked Repository Results</h2>
         </div>
         {repos &&
           repos.map((repo: any) => {
