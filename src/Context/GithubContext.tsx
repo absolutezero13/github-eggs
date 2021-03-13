@@ -37,7 +37,6 @@ const GithubProvider: React.FC = ({ children }: any) => {
     } else {
       setSearchPageStatus(false);
     }
-    localStorage.setItem("input", JSON.stringify(input));
   };
 
   return (

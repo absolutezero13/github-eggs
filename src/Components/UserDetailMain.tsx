@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { GithubContext } from "../Context/GithubContext";
 import svg from "../Icons/repository.svg";
 
@@ -19,7 +20,6 @@ const UserDetailMain: React.FC<UserDetailMainProps> = ({ id }) => {
       .then((res) => res.json())
       .then((repos) => setUserRepos(repos));
   }, []);
-  console.log(userRepos);
 
   return (
     <div className="user-detail-main">

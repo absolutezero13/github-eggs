@@ -3,6 +3,7 @@ import RepoDetailMain from "./RepoDetailMain";
 import SideBarRepoDetails from "./SideBarRepoDetails";
 
 const RepoDetails = (props: any) => {
+  console.log(props);
   return (
     <div className="repo-details">
       <SideBarRepoDetails id={props.match.params.id} />

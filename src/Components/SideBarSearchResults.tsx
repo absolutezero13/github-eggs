@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import repositoriesSVG from "../Icons/repositories.svg";
 import usersSVG from "../Icons/users.svg";
 import bookmarkblackSVG from "../Icons/bookmarkblack.svg";
@@ -6,6 +6,16 @@ import { Link } from "react-router-dom";
 import { GithubContext } from "../Context/GithubContext";
 const SideBarSearchResults: React.FC = () => {
   const { repoCount, userCount } = useContext(GithubContext);
+
+  const [bookmarkedRepoCount, setBookmarkedRepoCount] = useState<any>();
+
+  useEffect(() => {
+    const repos = JSON.parse(localStorage.getItem("bookmarkedRepos")!);
+    setBookmarkedRepoCount(repos.length);
+  }, []);
+
+  console.log(bookmarkedRepoCount);
+
   return (
     <div className="side-bar-search-results">
       <Link to="/">
@@ -26,7 +36,7 @@ const SideBarSearchResults: React.FC = () => {
         <div className="side-bar-search-results__bookmarked ">
           <img src={bookmarkblackSVG} alt="bookmarked" />
           <p className="result-title">Bookmarked</p>
-          <p className="quantity">15</p>
+          <p className="quantity"> {bookmarkedRepoCount} </p>
         </div>
       </Link>
     </div>

@@ -47,6 +47,10 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
     }
   });
 
+  const addBookmarkedRepo = (id: number) => {
+    localStorage.setItem("bookmarkedRepos", JSON.stringify(repo));
+  };
+
   console.log(pullRequestCount);
   return (
     <div className="repo-details-side-bar">
@@ -91,7 +95,10 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
       ) : (
         <p>Loading...</p>
       )}
-      <button className="repo-details-side-bar__button">
+      <button
+        onClick={() => addBookmarkedRepo(repo.id)}
+        className="repo-details-side-bar__button"
+      >
         <img src={bookmarkblueSVG} alt="" /> Add to Bookmarks
       </button>
     </div>
