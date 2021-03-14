@@ -6,6 +6,17 @@ const BookmarkedRepos: React.FC = () => {
     GithubContext
   );
 
+  useEffect(() => {
+    const repos = JSON.parse(localStorage.getItem("bookmarkedRepos")!);
+    console.log(repos);
+    if (repos) {
+      dispatch({
+        type: "GET_BOOKMARKED_REPOS",
+        repos,
+      });
+    }
+  }, []);
+  console.log(bookmarkedRepos);
   return (
     <div className="main-search-results bookmarked-repos">
       <div className="main-search-results__repository-results">
@@ -27,7 +38,10 @@ const BookmarkedRepos: React.FC = () => {
                   <h4> {repo.full_name} </h4>
                 </div>
                 <p> {repo.description} </p>
-                <button onClick={() => deleteBookmarkedRepo(repo.id)}>
+                <button
+                  className="button-delete"
+                  onClick={() => deleteBookmarkedRepo(repo.id)}
+                >
                   delete bookmark
                 </button>
               </div>

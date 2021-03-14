@@ -27,13 +27,22 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
   const [isBookmarked, setBookmarkStatus] = useState<boolean>();
 
   useEffect(() => {
+    if (bookmarkedRepos) {
+      localStorage.setItem("bookmarkedRepos", JSON.stringify(bookmarkedRepos));
+      if (bookmarkedRepos.indexOf(repo) !== -1) {
+        setBookmarkStatus(true);
+      } else {
+        setBookmarkStatus(false);
+      }
+    }
+  }, [bookmarkedRepos]);
+
+  useEffect(() => {
     const repo = repos?.find((e: any) => {
       return e.id == id;
     })!;
     setRepo(repo);
   }, []);
-  console.log(isBookmarked);
-  console.log(bookmarkedRepos);
 
   useEffect(() => {
     if (repo) {

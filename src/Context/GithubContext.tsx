@@ -22,19 +22,6 @@ const GithubProvider: React.FC = ({ children }: any) => {
   const [isSearched, setSearchPageStatus] = useState(false);
   const [bookmarkedRepos, dispatch] = useReducer(bookmarkedReposReducer, []);
 
-  useEffect(() => {
-    localStorage.setItem("bookmarkedRepos", JSON.stringify(bookmarkedRepos));
-  }, [bookmarkedRepos]);
-  useEffect(() => {
-    const repos = JSON.parse(localStorage.getItem("bookmarkedRepos")!);
-    console.log(repos);
-    if (repos) {
-      dispatch({
-        type: "GET_BOOKMARKED_POSTS",
-        repos,
-      });
-    }
-  }, []);
   const searchEverything = (input: string) => {
     if (input.length > 2) {
       setSearchPageStatus(true);
