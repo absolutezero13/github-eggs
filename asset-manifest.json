@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/github-eggs/static/css/main.b3e7b620.chunk.css",
+    "main.js": "/github-eggs/static/js/main.e560a23e.chunk.js",
+    "main.js.map": "/github-eggs/static/js/main.e560a23e.chunk.js.map",
+    "runtime-main.js": "/github-eggs/static/js/runtime-main.b29cd9cc.js",
+    "runtime-main.js.map": "/github-eggs/static/js/runtime-main.b29cd9cc.js.map",
+    "static/js/2.a1861b76.chunk.js": "/github-eggs/static/js/2.a1861b76.chunk.js",
+    "static/js/2.a1861b76.chunk.js.map": "/github-eggs/static/js/2.a1861b76.chunk.js.map",
+    "static/js/3.457f1e64.chunk.js": "/github-eggs/static/js/3.457f1e64.chunk.js",
+    "static/js/3.457f1e64.chunk.js.map": "/github-eggs/static/js/3.457f1e64.chunk.js.map",
+    "index.html": "/github-eggs/index.html",
+    "static/css/main.b3e7b620.chunk.css.map": "/github-eggs/static/css/main.b3e7b620.chunk.css.map",
+    "static/js/2.a1861b76.chunk.js.LICENSE.txt": "/github-eggs/static/js/2.a1861b76.chunk.js.LICENSE.txt",
+    "static/media/bookmark.116ece47.svg": "/github-eggs/static/media/bookmark.116ece47.svg",
+    "static/media/bookmarkblack.466f48e7.svg": "/github-eggs/static/media/bookmarkblack.466f48e7.svg",
+    "static/media/bookmarkblue.9727142e.svg": "/github-eggs/static/media/bookmarkblue.9727142e.svg",
+    "static/media/branches.805eea9b.svg": "/github-eggs/static/media/branches.805eea9b.svg",
+    "static/media/fork.83c4dec2.svg": "/github-eggs/static/media/fork.83c4dec2.svg",
+    "static/media/issues.950382de.svg": "/github-eggs/static/media/issues.950382de.svg",
+    "static/media/logo.ca9b8f0d.svg": "/github-eggs/static/media/logo.ca9b8f0d.svg",
+    "static/media/pullrequests.66ee4e85.svg": "/github-eggs/static/media/pullrequests.66ee4e85.svg",
+    "static/media/repolink.3463bc29.svg": "/github-eggs/static/media/repolink.3463bc29.svg",
+    "static/media/repositories.e82444e6.svg": "/github-eggs/static/media/repositories.e82444e6.svg",
+    "static/media/repository.763f1257.svg": "/github-eggs/static/media/repository.763f1257.svg",
+    "static/media/search-pc.3aa4aa46.svg": "/github-eggs/static/media/search-pc.3aa4aa46.svg",
+    "static/media/search.2cf3f7c5.svg": "/github-eggs/static/media/search.2cf3f7c5.svg",
+    "static/media/star.efdbc6ca.svg": "/github-eggs/static/media/star.efdbc6ca.svg",
+    "static/media/users.b3429583.svg": "/github-eggs/static/media/users.b3429583.svg",
+    "static/media/watch.0fc57707.svg": "/github-eggs/static/media/watch.0fc57707.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b29cd9cc.js",
+    "static/js/2.a1861b76.chunk.js",
+    "static/css/main.b3e7b620.chunk.css",
+    "static/js/main.e560a23e.chunk.js"
+  ]
+}
