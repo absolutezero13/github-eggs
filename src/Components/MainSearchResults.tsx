@@ -2,11 +2,13 @@ import React, { useContext, useEffect } from "react";
 import { GithubContext } from "../Context/GithubContext";
 import repositorySVG from "../Icons/repository.svg";
 import { Link } from "react-router-dom";
+import SideBarSearchResults from "./SideBarSearchResults";
 const MainSearchResults: React.FC = () => {
   const { repos, repoCount } = useContext(GithubContext);
 
   return (
     <div className="main-search-results">
+      <SideBarSearchResults />
       <div className="main-search-results__repository-results">
         <div className="main-search-results__repository-results__title">
           <h2> {repoCount ?? 0} Repository Results</h2>

@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { GithubContext } from "../Context/GithubContext";
+import SideBarSearchResults from "./SideBarSearchResults";
 const UsersPage: React.FC = () => {
   const { users, userCount } = useContext(GithubContext);
   return (
     <div className="main-search-results">
+      <SideBarSearchResults />
       <div className="main-search-results__repository-results">
         <div className="main-search-results__repository-results__title">
           <h2>{userCount ?? 0} User Results</h2>

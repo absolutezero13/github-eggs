@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { GithubContext } from "../Context/GithubContext";
 import repositorySVG from "../Icons/repository.svg";
+import SideBarSearchResults from "./SideBarSearchResults";
 const BookmarkedRepos: React.FC = () => {
   const { bookmarkedRepos, dispatch, deleteBookmarkedRepo } = useContext(
     GithubContext
@@ -10,6 +11,7 @@ const BookmarkedRepos: React.FC = () => {
   console.log(bookmarkedRepos);
   return (
     <div className="main-search-results bookmarked-repos">
+      <SideBarSearchResults />
       <div className="main-search-results__repository-results">
         <div className="main-search-results__repository-results__title">
           <h2>

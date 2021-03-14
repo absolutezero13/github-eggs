@@ -11,7 +11,6 @@ const SearchResults: React.FC = () => {
   return (
     <div className="search-results">
       <Router>
-        <SideBarSearchResults />
         <Switch>
           <Route path="/github-eggs/user-details/:id" component={UserDetails} />
           <Route path="/github-eggs/repo-details/:id" component={RepoDetails} />
