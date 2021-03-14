@@ -48,21 +48,23 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
         setBookmarkStatus(false);
       }
     }
-  });
+  }, [bookmarkedRepos]);
   useEffect(() => {
     if (repo) {
       fetch(
         `https://api.github.com/repos/${repo.owner.login}/${repo.name}/pulls`
       )
         .then((res) => res.json())
-        .then((branches) => setPullRequestCount(branches.length));
+        .then((pulls) => setPullRequestCount(pulls.length));
+
       fetch(
         `https://api.github.com/repos/${repo.owner.login}/${repo.name}/branches`
       )
         .then((res) => res.json())
         .then((branches) => setBranchCount(branches.length));
     }
-  }, []);
+  }, [repo]);
+
   const addBookmarkedRepo = () => {
     dispatch({
       type: "ADD_BOOKMARKED",
@@ -70,8 +72,7 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
     });
   };
 
-  console.log(bookmarkedRepo);
-
+  console.log(pullRequestCount, branchCount);
   return (
     <div className="repo-details-side-bar">
       {repo ? (

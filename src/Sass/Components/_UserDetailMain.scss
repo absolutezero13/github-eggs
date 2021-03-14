@@ -1,8 +1,8 @@
 .user-detail-main {
   display: flex;
-  margin: 5rem 2rem;
+  margin: 5rem 0rem;
   flex-direction: column;
-
+  padding-right: 2rem;
   &__title {
     display: flex;
     margin-bottom: 2rem;
@@ -23,6 +23,10 @@
 
   &__repo {
     margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: $bg-repo;
+    box-shadow: 0 0 2px 3px $bg-repo;
+    border-radius: 10px;
 
     &__repo-title {
       display: flex;
