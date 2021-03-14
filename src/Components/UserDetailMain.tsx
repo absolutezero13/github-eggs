@@ -33,8 +33,8 @@ const UserDetailMain: React.FC<UserDetailMainProps> = ({ id }) => {
           </div>
           {userRepos.map((repo: any) => {
             return (
-              <div key={repo.id} className="user-detai-main__repos">
-                <div>
+              <div key={repo.id} className="user-detail-main__repo">
+                <div className="user-detail-main__repo__repo-title">
                   <img src={svg} alt="repo" />
                   <h4> {repo.name} </h4>
                 </div>

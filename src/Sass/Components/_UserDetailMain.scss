@@ -20,4 +20,13 @@
       border-radius: 5px;
     }
   }
+
+  &__repo {
+    margin-bottom: 2rem;
+
+    &__repo-title {
+      display: flex;
+      margin-bottom: 1rem;
+    }
+  }
 }

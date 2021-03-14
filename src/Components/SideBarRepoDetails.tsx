@@ -24,7 +24,20 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
   const { bookmarkedRepos, dispatch, deleteBookmarkedRepo } = useContext(
     GithubContext
   );
+  const [bookmarkedRepo, setBookmarkedRepo] = useState<any>();
   const [isBookmarked, setBookmarkStatus] = useState<boolean>();
+  useEffect(() => {
+    const repo = repos?.find((e: any) => {
+      return e.id == id;
+    })!;
+    setRepo(repo);
+  }, []);
+  useEffect(() => {
+    const bookmarkedRepo = bookmarkedRepos?.find((e: any) => {
+      return e.id == id;
+    })!;
+    setBookmarkedRepo(bookmarkedRepo);
+  }, []);
 
   useEffect(() => {
     if (bookmarkedRepos) {
@@ -36,13 +49,6 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
       }
     }
   }, [bookmarkedRepos]);
-
-  useEffect(() => {
-    const repo = repos?.find((e: any) => {
-      return e.id == id;
-    })!;
-    setRepo(repo);
-  }, []);
 
   useEffect(() => {
     if (repo) {
@@ -65,13 +71,15 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
     });
   };
 
+  console.log(bookmarkedRepo);
+
   return (
     <div className="repo-details-side-bar">
       {repo ? (
         <div className="repo-details-side-bar__description">
           <img src={repositorySVG} alt="repo" />
           <h2> {repo.name} </h2>
-          <p> {repo.owner.login} </p>
+          <p>{repo.owner.login}</p>
           <div className="repo-details-side-bar__description__repo-link">
             <img src={repolinkSVG} alt="repolink" />
             <p> {repo.name} </p>
@@ -79,11 +87,11 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
           <div className="repo-details-side-bar__quantity">
             <div className="repo-details-side-bar__quantity__watch">
               <img src={watchSVG} alt="svg" /> <p className="text">Watch</p>
-              <p className="count"> {repo.watchers_count} </p>
+              <p className="count">{repo.watchers_count}</p>
             </div>
             <div className="repo-details-side-bar__quantity__star">
               <img src={starSVG} alt="svg" /> <p className="text">Star</p>
-              <p className="count"> {repo.stargazers_count} </p>
+              <p className="count">{repo.stargazers_count}</p>
             </div>
             <div className="repo-details-side-bar__quantity__fork">
               <img src={forkSVG} alt="svg" /> <p className="text">Fork</p>
@@ -106,7 +114,7 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
           </div>
         </div>
       ) : (
-        <p>Loading...</p>
+        <p>Loading</p>
       )}
       {isBookmarked ? (
         <button

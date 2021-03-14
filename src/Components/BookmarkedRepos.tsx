@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { GithubContext } from "../Context/GithubContext";
 import repositorySVG from "../Icons/repository.svg";
 const BookmarkedRepos: React.FC = () => {
@@ -6,16 +7,6 @@ const BookmarkedRepos: React.FC = () => {
     GithubContext
   );
 
-  useEffect(() => {
-    const repos = JSON.parse(localStorage.getItem("bookmarkedRepos")!);
-    console.log(repos);
-    if (repos) {
-      dispatch({
-        type: "GET_BOOKMARKED_REPOS",
-        repos,
-      });
-    }
-  }, []);
   console.log(bookmarkedRepos);
   return (
     <div className="main-search-results bookmarked-repos">
@@ -35,7 +26,9 @@ const BookmarkedRepos: React.FC = () => {
               >
                 <div className="main-search-results__repository-results__result__title">
                   <img src={repositorySVG} alt="repo" />
-                  <h4> {repo.full_name} </h4>
+                  <Link to={`/repo-details/${repo.id}`}>
+                    <h4> {repo.full_name} </h4>
+                  </Link>
                 </div>
                 <p> {repo.description} </p>
                 <button
