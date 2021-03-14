@@ -1,0 +1,10 @@
+.bookmarked-delete-button {
+  padding: 0.5rem;
+  border-radius: 100px;
+  cursor: pointer;
+  background-color: rgb(228, 74, 74);
+  outline: none;
+  &:hover {
+    background-color: lighten(rgb(228, 74, 74), 6%);
+  }
+}
