@@ -5,9 +5,7 @@ import bookmarkblackSVG from "../Icons/bookmarkblack.svg";
 import { Link } from "react-router-dom";
 import { GithubContext } from "../Context/GithubContext";
 const SideBarSearchResults: React.FC = () => {
-  const { repoCount, userCount, bookmarkedRepoCount } = useContext(
-    GithubContext
-  );
+  const { repoCount, userCount, bookmarkedRepos } = useContext(GithubContext);
   return (
     <div className="side-bar-search-results">
       <Link to="/">
@@ -28,7 +26,10 @@ const SideBarSearchResults: React.FC = () => {
         <div className="side-bar-search-results__bookmarked ">
           <img src={bookmarkblackSVG} alt="bookmarked" />
           <p className="result-title">Bookmarked</p>
-          <p className="quantity"> {bookmarkedRepoCount} </p>
+          <p className="quantity">
+            {" "}
+            {bookmarkedRepos && bookmarkedRepos.length}{" "}
+          </p>
         </div>
       </Link>
     </div>

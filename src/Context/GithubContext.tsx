@@ -9,7 +9,7 @@ type contextType = {
   isSearched: boolean;
   bookmarkedRepos: any;
   dispatch: any;
-  bookmarkedRepoCount: number;
+  deleteBookmarkedRepo: any;
 };
 
 export const GithubContext = createContext<Partial<contextType>>({});
@@ -21,16 +21,20 @@ const GithubProvider: React.FC = ({ children }: any) => {
   const [userCount, setUserCount] = useState();
   const [isSearched, setSearchPageStatus] = useState(false);
   const [bookmarkedRepos, dispatch] = useReducer(bookmarkedReposReducer, []);
-  const [bookmarkedRepoCount, setBookMarkedRepoCount] = useState();
 
   useEffect(() => {
     localStorage.setItem("bookmarkedRepos", JSON.stringify(bookmarkedRepos));
   }, [bookmarkedRepos]);
-
   useEffect(() => {
-    setBookMarkedRepoCount(bookmarkedRepos.length);
-  }, [bookmarkedRepos]);
-
+    const repos = JSON.parse(localStorage.getItem("bookmarkedRepos")!);
+    console.log(repos);
+    if (repos) {
+      dispatch({
+        type: "GET_BOOKMARKED_POSTS",
+        repos,
+      });
+    }
+  }, []);
   const searchEverything = (input: string) => {
     if (input.length > 2) {
       setSearchPageStatus(true);
@@ -52,6 +56,12 @@ const GithubProvider: React.FC = ({ children }: any) => {
     }
   };
 
+  const deleteBookmarkedRepo = (id: number) => {
+    dispatch({
+      type: "DELETE_BOOKMARKED",
+      id,
+    });
+  };
   return (
     <GithubContext.Provider
       value={{
@@ -62,8 +72,8 @@ const GithubProvider: React.FC = ({ children }: any) => {
         userCount,
         isSearched,
         bookmarkedRepos,
-        bookmarkedRepoCount,
         dispatch,
+        deleteBookmarkedRepo,
       }}
     >
       {children}
