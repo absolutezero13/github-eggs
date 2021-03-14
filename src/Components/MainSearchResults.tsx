@@ -21,7 +21,7 @@ const MainSearchResults: React.FC = () => {
               >
                 <div className="main-search-results__repository-results__result__title">
                   <img src={repositorySVG} alt="repo" />
-                  <Link to={`/repo-details/${repo.id}`}>
+                  <Link to={`/github-eggs/repo-details/${repo.id}`}>
                     <h4>{repo.name}</h4>
                   </Link>
                 </div>

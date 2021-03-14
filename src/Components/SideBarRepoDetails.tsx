@@ -48,8 +48,7 @@ const SideBarRepoDetails: React.FC<SideBarRepoDetailsProps> = ({ id }) => {
         setBookmarkStatus(false);
       }
     }
-  }, [bookmarkedRepos]);
-
+  });
   useEffect(() => {
     if (repo) {
       fetch(

@@ -13,11 +13,18 @@ const SearchResults: React.FC = () => {
       <Router>
         <SideBarSearchResults />
         <Switch>
-          <Route path="/user-details/:id" component={UserDetails} />
-          <Route path="/repo-details/:id" component={RepoDetails} />
-          <Route path="/search-bookmarks" component={BookmarkedRepos} />
-          <Route path="/search-users" component={UsersPage} />
-          <Route exact={true} path="/" component={MainSearchResults} />
+          <Route path="/github-eggs/user-details/:id" component={UserDetails} />
+          <Route path="/github-eggs/repo-details/:id" component={RepoDetails} />
+          <Route
+            path="/github-eggs/search-bookmarks"
+            component={BookmarkedRepos}
+          />
+          <Route path="/github-eggs/search-users" component={UsersPage} />
+          <Route
+            exact={true}
+            path="/github-eggs"
+            component={MainSearchResults}
+          />
         </Switch>
       </Router>
     </div>

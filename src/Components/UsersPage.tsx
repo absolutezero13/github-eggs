@@ -22,7 +22,7 @@ const UsersPage: React.FC = () => {
                     src={user.avatar_url}
                     alt="user"
                   />
-                  <Link to={`/user-details/${user.id}`}>
+                  <Link to={`/github-eggs/user-details/${user.id}`}>
                     <h4>{user.login}</h4>
                   </Link>
                 </div>

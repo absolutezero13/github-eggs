@@ -3,6 +3,7 @@ import logo from "../Icons/logo.svg";
 import searchSVG from "../Icons/search.svg";
 import bookmarkSVG from "../Icons/bookmark.svg";
 import { GithubContext } from "../Context/GithubContext";
+import { BrowserRouter, Link } from "react-router-dom";
 const Header: React.FC = () => {
   const { searchEverything } = useContext(GithubContext);
 
@@ -24,14 +25,18 @@ const Header: React.FC = () => {
           placeholder="Search..."
         />
       </div>
-      <div className="header__bookmarks">
-        <img
-          src={bookmarkSVG}
-          className="header__bookmark-icon"
-          alt="bookmark-icon"
-        />
-        <p>Bookmarks</p>
-      </div>
+      <BrowserRouter>
+        <Link to="/github-eggs/search-bookmarks">
+          <div className="header__bookmarks">
+            <img
+              src={bookmarkSVG}
+              className="header__bookmark-icon"
+              alt="bookmark-icon"
+            />
+            <p>Bookmarks</p>
+          </div>
+        </Link>
+      </BrowserRouter>
     </div>
   );
 };
