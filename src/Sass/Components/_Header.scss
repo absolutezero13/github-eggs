@@ -16,6 +16,10 @@
     display: flex;
     align-items: center;
     margin-right: 2rem;
+
+    @media screen and (max-width: 500px) {
+      margin-right: 1rem;
+    }
   }
 
   &__search {
@@ -32,6 +36,10 @@
       font-size: inherit;
       padding: 0.7rem;
       padding-left: 5rem;
+
+      @media screen and (max-width: 500px) {
+        width: 15rem;
+      }
     }
     ::placeholder {
       color: $white-text-color;
@@ -44,5 +52,12 @@
 
   &__bookmark-icon {
     margin-right: 1rem;
+  }
+
+  .logo,
+  .logo-box {
+    @media screen and (max-width: 600px) {
+      width: 15rem;
+    }
   }
 }

@@ -11,6 +11,9 @@
     width: 100%;
     overflow: auto;
     height: 90vh;
+    @media screen and (max-width: 600px) {
+      padding: 0 2rem;
+    }
 
     &__title {
       margin-bottom: 3rem;

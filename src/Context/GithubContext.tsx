@@ -1,4 +1,11 @@
-import React, { createContext, useEffect, useState, useReducer } from "react";
+import React, {
+  createContext,
+  useEffect,
+  useState,
+  useReducer,
+  useCallback,
+} from "react";
+import debounce from "lodash";
 import { bookmarkedReposReducer } from "./Reducer";
 type contextType = {
   repos: Array<object>;
@@ -12,6 +19,8 @@ type contextType = {
   deleteBookmarkedRepo: any;
 };
 
+console.log(debounce);
+
 export const GithubContext = createContext<Partial<contextType>>({});
 
 const GithubProvider: React.FC = ({ children }: any) => {
@@ -21,6 +30,7 @@ const GithubProvider: React.FC = ({ children }: any) => {
   const [userCount, setUserCount] = useState();
   const [isSearched, setSearchPageStatus] = useState(false);
   const [bookmarkedRepos, dispatch] = useReducer(bookmarkedReposReducer, []);
+
   useEffect(() => {
     const repos = JSON.parse(localStorage.getItem("bookmarkedRepos")!);
     console.log(repos);

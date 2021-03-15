@@ -37,7 +37,7 @@ const BookmarkedRepos: React.FC = () => {
                   className="bookmarked-delete-button button-delete"
                   onClick={() => deleteBookmarkedRepo(repo.id)}
                 >
-                  delete bookmark
+                  Delete Bookmark
                 </button>
               </div>
             );

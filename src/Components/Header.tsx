@@ -9,8 +9,8 @@ const Header: React.FC = () => {
 
   return (
     <div className="header">
-      <div className="logo">
-        <img src={logo} alt="logo" />
+      <div className="logo-box">
+        <img className="logo" src={logo} alt="logo" />
       </div>
       <div className="header__search">
         <img

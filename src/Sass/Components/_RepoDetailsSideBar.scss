@@ -6,6 +6,9 @@
   min-width: 30rem;
   height: $body-height;
   margin: 0rem 3rem;
+  @media screen and (max-width: 600px) {
+    min-width: 20rem;
+  }
 
   &__description {
     padding-top: 3rem;
