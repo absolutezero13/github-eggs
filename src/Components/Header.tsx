@@ -3,9 +3,9 @@ import searchSVG from "../Icons/search.svg";
 import bookmarkSVG from "../Icons/bookmark.svg";
 import { GithubContext } from "../Context/GithubContext";
 import { BrowserRouter, Link } from "react-router-dom";
+import { debounce } from "lodash";
 const Header: React.FC = () => {
   const { searchEverything } = useContext(GithubContext);
-
   return (
     <div className="header">
       <div className="logo-box">
@@ -18,7 +18,7 @@ const Header: React.FC = () => {
           alt="search-icon"
         />
         <input
-          onChange={(e) => searchEverything(e.target.value)}
+          onChange={debounce((e) => searchEverything(e.target.value), 500)}
           type="search"
           className="header__search__input"
           placeholder="Search..."

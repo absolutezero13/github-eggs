@@ -5,7 +5,7 @@ import React, {
   useReducer,
   useCallback,
 } from "react";
-import debounce from "lodash";
+
 import { bookmarkedReposReducer } from "./Reducer";
 type contextType = {
   repos: Array<object>;
