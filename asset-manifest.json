@@ -1,24 +1,23 @@
 {
   "files": {
-    "main.css": "/github-eggs/static/css/main.83f65114.chunk.css",
-    "main.js": "/github-eggs/static/js/main.bc79194d.chunk.js",
-    "main.js.map": "/github-eggs/static/js/main.bc79194d.chunk.js.map",
-    "runtime-main.js": "/github-eggs/static/js/runtime-main.3376e641.js",
-    "runtime-main.js.map": "/github-eggs/static/js/runtime-main.3376e641.js.map",
-    "static/js/2.896dbbb8.chunk.js": "/github-eggs/static/js/2.896dbbb8.chunk.js",
-    "static/js/2.896dbbb8.chunk.js.map": "/github-eggs/static/js/2.896dbbb8.chunk.js.map",
-    "static/js/3.e1baf2ae.chunk.js": "/github-eggs/static/js/3.e1baf2ae.chunk.js",
-    "static/js/3.e1baf2ae.chunk.js.map": "/github-eggs/static/js/3.e1baf2ae.chunk.js.map",
+    "main.css": "/github-eggs/static/css/main.f41587a6.chunk.css",
+    "main.js": "/github-eggs/static/js/main.07fdcf12.chunk.js",
+    "main.js.map": "/github-eggs/static/js/main.07fdcf12.chunk.js.map",
+    "runtime-main.js": "/github-eggs/static/js/runtime-main.893fdc38.js",
+    "runtime-main.js.map": "/github-eggs/static/js/runtime-main.893fdc38.js.map",
+    "static/js/2.927957a8.chunk.js": "/github-eggs/static/js/2.927957a8.chunk.js",
+    "static/js/2.927957a8.chunk.js.map": "/github-eggs/static/js/2.927957a8.chunk.js.map",
+    "static/js/3.8ef65b6d.chunk.js": "/github-eggs/static/js/3.8ef65b6d.chunk.js",
+    "static/js/3.8ef65b6d.chunk.js.map": "/github-eggs/static/js/3.8ef65b6d.chunk.js.map",
     "index.html": "/github-eggs/index.html",
-    "static/css/main.83f65114.chunk.css.map": "/github-eggs/static/css/main.83f65114.chunk.css.map",
-    "static/js/2.896dbbb8.chunk.js.LICENSE.txt": "/github-eggs/static/js/2.896dbbb8.chunk.js.LICENSE.txt",
+    "static/css/main.f41587a6.chunk.css.map": "/github-eggs/static/css/main.f41587a6.chunk.css.map",
+    "static/js/2.927957a8.chunk.js.LICENSE.txt": "/github-eggs/static/js/2.927957a8.chunk.js.LICENSE.txt",
     "static/media/bookmark.116ece47.svg": "/github-eggs/static/media/bookmark.116ece47.svg",
     "static/media/bookmarkblack.466f48e7.svg": "/github-eggs/static/media/bookmarkblack.466f48e7.svg",
     "static/media/bookmarkblue.9727142e.svg": "/github-eggs/static/media/bookmarkblue.9727142e.svg",
     "static/media/branches.805eea9b.svg": "/github-eggs/static/media/branches.805eea9b.svg",
     "static/media/fork.83c4dec2.svg": "/github-eggs/static/media/fork.83c4dec2.svg",
     "static/media/issues.950382de.svg": "/github-eggs/static/media/issues.950382de.svg",
-    "static/media/logo.ca9b8f0d.svg": "/github-eggs/static/media/logo.ca9b8f0d.svg",
     "static/media/pullrequests.66ee4e85.svg": "/github-eggs/static/media/pullrequests.66ee4e85.svg",
     "static/media/repolink.3463bc29.svg": "/github-eggs/static/media/repolink.3463bc29.svg",
     "static/media/repositories.e82444e6.svg": "/github-eggs/static/media/repositories.e82444e6.svg",
@@ -30,9 +29,9 @@
     "static/media/watch.0fc57707.svg": "/github-eggs/static/media/watch.0fc57707.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.3376e641.js",
-    "static/js/2.896dbbb8.chunk.js",
-    "static/css/main.83f65114.chunk.css",
-    "static/js/main.bc79194d.chunk.js"
+    "static/js/runtime-main.893fdc38.js",
+    "static/js/2.927957a8.chunk.js",
+    "static/css/main.f41587a6.chunk.css",
+    "static/js/main.07fdcf12.chunk.js"
   ]
 }
