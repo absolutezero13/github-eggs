@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import logo from "../Icons/logo.svg";
 import searchSVG from "../Icons/search.svg";
 import bookmarkSVG from "../Icons/bookmark.svg";
 import { GithubContext } from "../Context/GithubContext";
@@ -10,7 +9,7 @@ const Header: React.FC = () => {
   return (
     <div className="header">
       <div className="logo-box">
-        <img className="logo" src={logo} alt="logo" />
+        <h1>Github Eggs</h1>
       </div>
       <div className="header__search">
         <img

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { GithubContext } from "../Context/GithubContext";
 const SideBarSearchResults: React.FC = () => {
   const { repoCount, userCount, bookmarkedRepos } = useContext(GithubContext);
+
   return (
     <div className="side-bar-search-results">
       <Link to="/github-eggs/">
@@ -27,8 +28,7 @@ const SideBarSearchResults: React.FC = () => {
           <img src={bookmarkblackSVG} alt="bookmarked" />
           <p className="result-title">Bookmarked</p>
           <p className="quantity">
-            {" "}
-            {bookmarkedRepos && bookmarkedRepos.length}{" "}
+            {bookmarkedRepos && bookmarkedRepos.length}
           </p>
         </div>
       </Link>

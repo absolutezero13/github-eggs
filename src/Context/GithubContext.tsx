@@ -19,7 +19,7 @@ type contextType = {
   deleteBookmarkedRepo: any;
 };
 
-console.log(debounce);
+// console.log(debounce);
 
 export const GithubContext = createContext<Partial<contextType>>({});
 
@@ -42,7 +42,7 @@ const GithubProvider: React.FC = ({ children }: any) => {
     }
   }, []);
 
-  const searchEverything = (input: string) => {
+  const searchEverything = async (input: string) => {
     if (input.length > 2) {
       setSearchPageStatus(true);
       fetch(`https://api.github.com/search/repositories?q=${input}`)
