@@ -17,18 +17,16 @@ const MainSearchResults: React.FC = () => {
         {repos &&
           repos.map((repo: any) => {
             return (
-              <div
-                key={repo.id}
-                className="main-search-results__repository-results__result"
-              >
-                <div className="main-search-results__repository-results__result__title">
-                  <img src={repositorySVG} alt="repo" />
-                  <Link to={`/github-eggs/repo-details/${repo.id}`}>
+              <Link key={repo.id} to={`/github-eggs/repo-details/${repo.id}`}>
+                <div className="main-search-results__repository-results__result">
+                  <div className="main-search-results__repository-results__result__title">
+                    <img src={repositorySVG} alt="repo" />
+
                     <h4>{repo.name}</h4>
-                  </Link>
-                </div>
-                <p>{repo.description}</p>
-              </div>
+                  </div>
+                  <p>{repo.description}</p>
+                </div>{" "}
+              </Link>
             );
           })}
       </div>

@@ -6,6 +6,7 @@ import RepoDetails from "./RepoDetails";
 import SideBarSearchResults from "./SideBarSearchResults";
 import UserDetails from "./UserDetails";
 import UsersPage from "./UsersPage";
+import Header from "./Header";
 
 const SearchResults: React.FC = () => {
   return (
@@ -18,7 +19,11 @@ const SearchResults: React.FC = () => {
             path="/github-eggs/search-bookmarks"
             component={BookmarkedRepos}
           />
-          <Route path="/github-eggs/search-users" component={UsersPage} />
+          <Route
+            path="/github-eggs/search-users"
+            component={UsersPage}
+            exact={true}
+          />
           <Route
             exact={true}
             path="/github-eggs"

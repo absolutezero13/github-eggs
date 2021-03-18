@@ -14,22 +14,20 @@ const UsersPage: React.FC = () => {
         {users &&
           users.map((user: any) => {
             return (
-              <div
-                key={user.id}
-                className="main-search-results__repository-results__result"
-              >
-                <div className="main-search-results__repository-results__result__title">
-                  <img
-                    className="user-picture"
-                    src={user.avatar_url}
-                    alt="user"
-                  />
-                  <Link to={`/github-eggs/user-details/${user.id}`}>
+              <Link key={user.id} to={`/github-eggs/user-details/${user.id}`}>
+                <div className="main-search-results__repository-results__result">
+                  <div className="main-search-results__repository-results__result__title">
+                    <img
+                      className="user-picture"
+                      src={user.avatar_url}
+                      alt="user"
+                    />
+
                     <h4>{user.login}</h4>
-                  </Link>
+                  </div>
+                  <p>{user.type}</p>
                 </div>
-                <p>{user.type}</p>
-              </div>
+              </Link>
             );
           })}
       </div>

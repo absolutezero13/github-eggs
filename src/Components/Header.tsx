@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import searchSVG from "../Icons/search.svg";
 import bookmarkSVG from "../Icons/bookmark.svg";
 import { GithubContext } from "../Context/GithubContext";
-import { BrowserRouter, Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { debounce } from "lodash";
 const Header: React.FC = () => {
   const { searchEverything } = useContext(GithubContext);
@@ -18,26 +18,24 @@ const Header: React.FC = () => {
           alt="search-icon"
         />
         <input
-          onChange={debounce((e) => searchEverything(e.target.value), 500)}
+          onChange={debounce((e) => searchEverything(e.target.value), 1000)}
           type="search"
           className="header__search__input"
           placeholder="Search..."
         />
       </div>
-      <BrowserRouter>
-        <Link to="/github-eggs/search-bookmarks">
-          <div className="header__bookmarks">
-            <img
-              src={bookmarkSVG}
-              className="header__bookmark-icon"
-              alt="bookmark-icon"
-            />
-            <p>Bookmarks</p>
-          </div>
-        </Link>
-      </BrowserRouter>
+      <Link to="/github-eggs/search-bookmarks">
+        <div className="header__bookmarks">
+          <img
+            src={bookmarkSVG}
+            className="header__bookmark-icon"
+            alt="bookmark-icon"
+          />
+          <p>Bookmarks</p>
+        </div>
+      </Link>
     </div>
   );
 };
 
-export default Header;
+export default withRouter(Header);

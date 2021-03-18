@@ -56,6 +56,7 @@
 
   .logo,
   .logo-box {
+    text-align: center;
     @media screen and (max-width: 600px) {
       width: 15rem;
     }
