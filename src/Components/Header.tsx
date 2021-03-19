@@ -18,7 +18,7 @@ const Header: React.FC = () => {
           alt="search-icon"
         />
         <input
-          onChange={debounce((e) => searchEverything(e.target.value), 1000)}
+          onChange={debounce((e) => searchEverything(e.target.value), 800)}
           type="search"
           className="header__search__input"
           placeholder="Search..."

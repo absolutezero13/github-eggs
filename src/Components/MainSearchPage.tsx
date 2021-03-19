@@ -7,7 +7,7 @@ const MainSearchPage: React.FC = () => {
   const { isSearched } = useContext(GithubContext);
   return (
     <div>
-      {true ? (
+      {isSearched ? (
         <SearchResults />
       ) : (
         <div className="blank-search-page">

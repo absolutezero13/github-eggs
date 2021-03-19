@@ -31,7 +31,6 @@ const GithubProvider: React.FC = ({ children }: any) => {
 
   useEffect(() => {
     const repos = JSON.parse(localStorage.getItem("bookmarkedRepos")!);
-    console.log(repos);
     if (repos) {
       dispatch({
         type: "GET_BOOKMARKED_REPOS",
@@ -41,7 +40,7 @@ const GithubProvider: React.FC = ({ children }: any) => {
   }, []);
 
   const searchEverything = async (input: string) => {
-    if (input.length > 2) {
+    if (input.length > 1) {
       setSearchPageStatus(true);
       const res = await fetch(
         `https://api.github.com/search/repositories?q=${input}`
