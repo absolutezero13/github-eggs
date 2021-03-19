@@ -14,12 +14,10 @@ type contextType = {
   repoCount: number;
   userCount: number;
   isSearched: boolean;
-  bookmarkedRepos: any;
+  bookmarkedRepos: Array<object>;
   dispatch: any;
   deleteBookmarkedRepo: any;
 };
-
-// console.log(debounce);
 
 export const GithubContext = createContext<Partial<contextType>>({});
 
@@ -45,19 +43,18 @@ const GithubProvider: React.FC = ({ children }: any) => {
   const searchEverything = async (input: string) => {
     if (input.length > 2) {
       setSearchPageStatus(true);
-      fetch(`https://api.github.com/search/repositories?q=${input}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setRepoCount(data.total_count);
-          setRepos(data.items);
-        });
-
-      fetch(`https://api.github.com/search/users?q=${input}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setUserCount(data.total_count);
-          setUsers(data.items);
-        });
+      const res = await fetch(
+        `https://api.github.com/search/repositories?q=${input}`
+      );
+      const data = await res.json();
+      setRepoCount(data.total_count);
+      setRepos(data.items);
+      const res2 = await fetch(
+        `https://api.github.com/search/users?q=${input}`
+      );
+      const data2 = await res2.json();
+      setUserCount(data2.total_count);
+      setUsers(data2.items);
     } else {
       setSearchPageStatus(false);
     }
