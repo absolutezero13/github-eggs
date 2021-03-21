@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import SideBarSearchResults from "./SideBarSearchResults";
 const MainSearchResults: React.FC = () => {
   const { repos, repoCount } = useContext(GithubContext);
-
+  console.log(repos);
   return (
     <div className="main-search-results">
       <SideBarSearchResults />
