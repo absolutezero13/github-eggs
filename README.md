@@ -25,7 +25,7 @@ You can clone the project with the command below.
 git clone https://github.com/absolutezero13/github-eggs.git
 ```
 
-Navigate to the github-eggs folder and run this command;
+Navigate to the github-eggs folder and run this command:
 
 ```
 npm install
