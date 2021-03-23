@@ -8,6 +8,7 @@ Github Eggs is using Github API to provide search results for both users and rep
 - React Hooks
 - Typescript
 - Context API
+- Redux
 - SCSS
 
 <div>
