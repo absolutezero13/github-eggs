@@ -30,4 +30,5 @@ Navigate to the github-eggs folder and run this command:
 
 ```
 npm install
+
 ```
